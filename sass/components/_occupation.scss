@@ -1,0 +1,34 @@
+/* Occupation */
+
+.occupation {
+  padding-top: 0;
+}
+
+.occupation-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+.occupation-list__item {
+  position: relative;
+
+  flex-basis: calc((100% - 60px) / 3);
+}
+
+.occupation-list__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 70px;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--light-title-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+}

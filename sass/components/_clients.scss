@@ -1,0 +1,33 @@
+/* Cleints */
+.clients-list {
+    display: flex;
+    gap: 30px;
+}
+
+.clients-item {
+    flex-basis: calc((100% - 5 * 30px) / 3);
+}
+
+.clients-link {
+    display: flex;
+    height: 92px;
+    border: 1px solid var(--icon-color);
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    fill: var(--icon-color);
+    transition: border-color var(--transition-time);
+    .clients-icon {
+        transition: fill var(--transition-time);
+        }
+    &:hover,
+    &:focus {
+        border-color: var(--accent-color);
+                }
+}
+
+
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+    fill: var(--accent-color);
+}
