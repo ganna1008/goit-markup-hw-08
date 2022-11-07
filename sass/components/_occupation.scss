@@ -1,6 +1,10 @@
 /* Occupation */
 
 .occupation {
+  @media screen and (max-width: 1199.5px) {
+    display: none;
+  }
+
   padding-top: 0;
 }
 

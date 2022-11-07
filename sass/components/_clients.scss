@@ -1,11 +1,20 @@
 /* Cleints */
 .clients-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
 .clients-item {
-    flex-basis: calc((100% - 5 * 30px) / 3);
+    @include width-calc(2);
+
+    @include tablet {
+        @include width-calc(3);
+    }
+
+    @include desktop {
+        flex-basis: calc((100% - 5 * 30px) / 6);
+    }
 }
 
 .clients-link {
@@ -17,13 +26,15 @@
     justify-content: center;
     fill: var(--icon-color);
     transition: border-color var(--transition-time);
+
     .clients-icon {
         transition: fill var(--transition-time);
-        }
+    }
+
     &:hover,
     &:focus {
         border-color: var(--accent-color);
-                }
+    }
 }
 
 
