@@ -16,8 +16,8 @@
     left: 50%;
     padding: 40px;
 
-    width: 528px;
-    height: 581px;
+    width: 100%;
+    height: 609px;
 
     background-color: var(--light-title-text-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -27,9 +27,20 @@
     opacity: 1;
 
     transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity var(--transition-time) 300ms;
+
     .backdrop.is-hidden & {
         transform: translate(-50%, -50%) scaleX(0);
         opacity: 0.5;
+    }
+
+    @include mobile {
+        width: 450px;
+        height: 609px;
+    }
+
+    @include desktop {
+        width: 528px;
+        height: 581px;
     }
 }
 
@@ -50,10 +61,11 @@
     border-radius: 50%;
 
     cursor: pointer;
+
     &:hover,
     &:focus {
         fill: var(--accent-color);
-        }
+    }
 }
 
 
@@ -67,13 +79,18 @@
 }
 
 .form-title {
+    max-width: 100%;
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
     margin-bottom: 12px;
 
     color: var(--dark-title-text-color);
+
+    @include desktop {
+        line-height: 1.15;
+    }
 }
 
 .form-field {
@@ -99,7 +116,7 @@
 
     &:focus {
         border: 1px solid var(--accent-color);
-        }
+    }
 }
 
 
@@ -113,9 +130,10 @@
     top: 50%;
     transform: translateY(-50%);
     transition: fill var(--transition-time);
+
     .form-input:focus+& {
-            fill: var(--accent-color);
-        }
+        fill: var(--accent-color);
+    }
 }
 
 .form-field-comments {
@@ -134,15 +152,22 @@
     transition: border var(--transition-time);
 
     resize: none;
+
     &::placeholder {
-        font-size: 12px;
-        line-height: 1.17;
+        font-size: 14px;
+        line-height: 1.14;
         letter-spacing: 0.01em;
         color: rgba(117, 117, 117, 0.5);
+
+        @include desktop {
+            font-size: 12px;
+            line-height: 1.17;
         }
+    }
+
     &:focus {
-            border: 1px solid var(--accent-color);
-        }
+        border: 1px solid var(--accent-color);
+    }
 }
 
 
@@ -156,17 +181,19 @@
 }
 
 .privacy {
-    width: max-content;
+    // width: max-content;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+
     &-link {
-            color: var(--accent-color);
-        }
+        color: var(--accent-color);
+    }
 }
 
 .privacy-text {
-    font-size: 14px;
-    line-height: 1.71;
+    font-size: 12px;
+    line-height: 1.17;
     color: var(--primary-text-color);
     display: flex;
     align-items: center;
@@ -187,6 +214,11 @@
             background-color: var(--accent-color);
             border-color: transparent;
         }
+    }
+
+    @include desktop {
+        font-size: 14px;
+        line-height: 1.71;
     }
 }
 
@@ -222,6 +254,5 @@
     &:hover,
     &:focus {
         background-color: var(--button-active-bgc);
-        }
+    }
 }
-

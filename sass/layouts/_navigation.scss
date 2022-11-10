@@ -5,8 +5,12 @@
 }
 
 .site-nav {
-display: flex;
+    display: flex;
     align-items: center;
+
+    @media screen and (max-width: 767.9px) {
+        display: none;
+    }
 }
 
 .navigation__site-nav {
@@ -29,16 +33,18 @@ display: flex;
     letter-spacing: 0.02em;
 
     transition: color var(--transition-time);
+
     &:hover,
     &:focus {
         color: var(--accent-color);
-        }
+    }
 }
 
 
 
 .site-nav__link--current {
     color: var(--accent-color);
+
     &::after {
         position: absolute;
         left: 0;
@@ -49,6 +55,5 @@ display: flex;
         height: 4px;
         background: var(--accent-color);
         border-radius: 2px;
-        }
+    }
 }
-

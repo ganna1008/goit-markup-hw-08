@@ -13,7 +13,13 @@
     width: 768px;
   }
 
-   @include desktop {
-       width: 1200px;
-   }
+  @include desktop {
+    width: 1200px;
+  }
+}
+
+.container--mobile {
+  padding-left: 40px;
+  padding-right: 15px;
+  margin: 0 auto;
 }
